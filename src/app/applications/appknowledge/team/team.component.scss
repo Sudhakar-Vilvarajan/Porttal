@@ -1,0 +1,22 @@
+.app
+{
+    padding: 50px;
+}
+.content
+{
+    padding: 25px;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.app_icon{
+    width : 20em;
+    height: 15em;
+    border: 2px solid black;
+    box-sizing: border-box;    
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.app_icon:hover{
+    box-shadow: 0 0 5px 5px rgba(0, 140, 186, 0.5);
+}

@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 350px;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer-content {
+  padding: 0px;
+}
+
+
+.bg-image {
+  /* The image used */
+  background-image: url("/assets/backgroundtruck.png");
+  //z-index: -1;
+
+  /* Add the blur effect 
+  filter: blur(2px);
+  -webkit-filter: blur(2px);*/
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
