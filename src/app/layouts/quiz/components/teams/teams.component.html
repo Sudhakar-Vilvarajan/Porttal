@@ -1,1 +1,43 @@
-<p>teams works!</p>
+<div class="container">
+    <div *ngIf="quizPortalError.getMessage() != ''">
+        <div class="alert alert-danger" role="alert">
+            {{quizPortalError.getMessage()}}
+        </div>
+    </div>
+    <div class="jumbotron">
+        <!-- <h1 [ngClass]="isAdmin ? 'display-5' : 'display-4'"> -->
+        <h1 [ngClass]="'display-4'">
+            Welcome to JBHunt Quiz Portal
+            <!-- <span *ngIf = "isAdmin">- Admin Panel</span> -->
+        </h1>
+        <!-- <div *ngIf="isAdmin then adminLead else userLead"></div>
+        <ng-template #userLead>
+            <p class="lead">This is a quiz platform, where you will be tested who much you have lean so far about our project, bussiness flow and orgianization</p></ng-template>
+        <ng-template #adminLead>
+            <p class="lead">You will be able to manipulate teams, courses and questions data here</p>
+            <a class="btn btn-primary text-white" routerLink="/admin/addTeam"><i class="fas fa-plus"></i> New Team</a>
+        </ng-template> -->
+        <div>
+            <p class="lead">This is a quiz platform, where you will be tested who much you have lean so far about our project, bussiness flow and orgianization</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="col text-center" *ngIf="!allTeam">
+                <img src="assets/data-not-found.svg" alt="">
+            </div>
+            <div class="col-md-4 col-sm-6 mb-3" *ngFor = "let team of allTeam">
+                <div class="jumbotron myjumbo" 
+                    (click)="onTeamChoose(team)"
+                    [ngStyle]="{'background-image' : updateUrl(team.backgroundImageURL) }">
+                        <h1 class="d-md-4 d-sm-3 text-center mytext">{{team.name}}</h1>
+                </div>
+                <!-- <div class="actionbar" *ngIf = "isAdmin">
+                    <a class="action mr-4"><i class="fas fa-edit"></i> Edit</a>
+                    <a class="action float-right"><i class="fas fa-trash-alt"></i > Delete</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

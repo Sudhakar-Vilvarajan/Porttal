@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TeamsComponent } from './components/teams/teams.component';
@@ -19,7 +20,8 @@ import { ResultModalComponent } from './components/modals/result-modal/result-mo
     ResultModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class QuizModule { }
