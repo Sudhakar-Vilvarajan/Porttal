@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Attendee } from './../../../Interfaces';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-attendee-details-modal',
@@ -9,7 +11,16 @@ export class AttendeeDetailsModalComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  @Input('courseID') courseID : number;
+  @Output('submit') submit = new EventEmitter<Attendee>();
+  
+
+  ngOnInit(): void {
+    
+  }
+
+  onAttendeeDetailsSubmit(form: NgForm) : void{
+    this.submit.emit(form.value);
   }
 
 }
