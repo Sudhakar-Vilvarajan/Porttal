@@ -1,1 +1,110 @@
-<p>question-modal works!</p>
+<!-- Modal -->
+<div
+class="modal fade" 
+[id]="'questionModal'+course.id"
+tabindex="-1" role="dialog" 
+data-backdrop="static" 
+data-keyboard="false"
+aria-labelledby="questionModalLabel" 
+aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="alert alert-danger mb-0" *ngIf="quizPortalError.getMessage()">
+                {{quizPortalError.getMessage()}}
+            </div>
+            <div class="modal-header">
+                <div class="row align-items-center" style="width: 100%;">
+                    <div class="col-4">
+                        <small>
+                            <strong>Team:</strong> {{course.team.name}}<br>
+                            <strong>Course:</strong> {{course.name}}
+                        </small>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div class="h6 my-0" *ngIf="timeLeft">Time Left</div>
+                        <div class="h6 my-0">{{timeLeft|timer}}</div>
+                    </div>
+                    <div class="col-4 text-right" *ngIf="attendee">
+                        <small>
+                            <strong>Name:</strong> {{attendee.name}}<br>
+                            <strong>CTS ID:</strong> {{attendee.ctsID}}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row" *ngIf="selectiveQuestions.length>0">
+                    <div class="col-12 questionModalBody">
+                        <form #questionForm="ngForm" >
+                            <div class="question mb-3 p-3"
+                            *ngFor="let question of selectiveQuestions; index as questionIndex">
+                                <div class="h6">
+                                    <span class="p-2">{{questionIndex+1}}.</span>
+                                    {{question.text}}
+                                </div>
+                                <div *ngIf="question.type==='MCQ' then mcq else mca"></div>
+
+                                <!-- MCQ -->
+                                <ng-template #mcq>
+                                    <div class="form-check" 
+                                    *ngFor="let option of question.options; index as optionIndex" >
+                                        <input class="form-check-input"
+                                        type="radio"
+                                        ngModel
+                                        [name]="question.id" 
+                                        [id]="questionIndex+'_'+optionIndex" 
+                                        [value]="option.text">
+                                        
+                                        <label class="form-check-label" 
+                                        [for]="questionIndex+'_'+optionIndex">
+                                            {{option.text}}
+                                        </label>
+                                    </div>
+                                </ng-template>
+
+                                <!-- MCA -->
+                                <ng-template #mca>
+                                    <div class="form-check" 
+                                    *ngFor="let option of question.options; index as optionIndex"
+                                    ngModelGroup={{question.id}}>
+                                        <input class="form-check-input"
+                                        type="checkbox"
+                                        ngModel
+                                        [name]="option.text"
+                                        [id]="questionIndex+'_'+optionIndex">
+                                        
+                                        <label class="form-check-label" 
+                                        [for]="questionIndex+'_'+optionIndex">
+                                            {{option.text}}
+                                        </label>
+                                    </div>
+                                </ng-template>
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="submit" 
+                                class="btn btn-success"
+                                data-toggle="modal"
+                                [attr.data-target]="'#resultModal'+course.id"
+                                data-dismiss="modal"
+                                (click)="onSubmitButtonClick()"
+                                #submitButton>
+                                    <i class="fas fa-paper-plane"></i>
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" *ngIf="selectiveQuestions.length<=0">
+                <button type="button" 
+                class="btn btn-secondary" 
+                data-dismiss="modal"
+                (click)="onQuestionModalClose()">
+                    <i class="fas fa-times"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
