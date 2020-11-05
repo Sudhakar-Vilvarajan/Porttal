@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,8 @@ import { ResultModalComponent } from './components/modals/result-modal/result-mo
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ]
 })
 export class QuizModule { }

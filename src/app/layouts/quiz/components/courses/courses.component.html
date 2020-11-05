@@ -1,1 +1,95 @@
-<p>courses works!</p>
+<div class="container">
+    <div *ngIf="quizPortalError.getMessage() != ''">
+        <div class="alert alert-danger" role="alert">
+            {{quizPortalError.getMessage()}}
+        </div>
+    </div>
+    <div class="jumbotron myjumbo text-center"
+        [ngStyle]="team ? {'background-image' : updateUrl(team.backgroundImageURL) } : ''">
+            <h1 class="display-4 mytext" *ngIf = "team">{{team.name}}</h1>
+            <p *ngIf = "team" class="lead">Please choose a course from the following</p>
+            <a class="btn btn-primary" routerLink="/quiz"><i class="fas fa-backward"></i> Go Back</a>
+    </div>
+    <div class="row">
+        <div class="col text-center" *ngIf="!allCourse">
+            <img src="assets/data-not-found.svg" alt="">
+        </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="card" *ngFor="let course of allCourse">
+                <div class="card-header">
+                    <h2 class="mb-0">
+                    <button 
+                    class="btn btn-block text-left" 
+                    type="button"
+                    data-toggle="collapse" 
+                    [attr.data-target]="'#course'+ course.id">
+                        {{course.name}}
+                    </button>
+                    </h2>
+                </div>
+          
+                <div [id]="'course'+ course.id" class="collapse" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <h6 class="card-subtitle">Description : </h6>
+                        <p class="card-text">{{course.description}}</p>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <h6 class="card-subtitle">Course ID : </h6>
+                                <p class="card-text">{{course.id}}</p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <h6 class="card-subtitle">Team : </h6>
+                                <p class="card-text">{{course.team.name}}</p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <h6 class="card-subtitle">Number of questions : </h6>
+                                <p class="card-text">{{course.numberOfQuestions}}</p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <h6 class="card-subtitle">Duration (in Minutes) : </h6>
+                                <p class="card-text">{{course.durationInMins}}</p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <h6 class="card-subtitle">Created By : </h6>
+                                <p class="card-text">{{course.createdBy}}</p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <h6 class="card-subtitle">Created Date : </h6>
+                                <p class="card-text">{{course.createdDate | date}}</p>
+                            </div>
+                            <div class="col-md-4 col-sm-6"></div>
+                        </div>
+                        <button 
+                        type="button" 
+                        class="btn btn-primary" 
+                        data-toggle="modal"
+                        [attr.data-target]="'#attendeeDetailsModal'+ course.id">
+                            <i class="fas fa-play-circle"></i> Begin
+                        </button>
+                    </div>
+                </div>
+
+                <app-attendee-details-modal
+                #attendeeDetailsModal
+                [courseID]="course.id"
+                (submit)="attendee=$event; questionModal.loadQuestions()">
+                </app-attendee-details-modal>
+                
+                <app-question-modal
+                #questionModal
+                [course]="course"
+                [attendee]="attendee"
+                (questionSelection)="resultModal.questions=$event"
+                (answerSubmit)="resultModal.answers=$event; resultModal.evaluateAswers()">
+                </app-question-modal>
+
+                <app-result-modal
+                #resultModal
+                [course]="course"
+                [attendee]="attendee">
+                </app-result-modal>
+            </div>
+        </div>
+    </div>
+</div>

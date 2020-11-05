@@ -1,3 +1,4 @@
+import { CoursesComponent } from './layouts/quiz/components/courses/courses.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path : 'quiz',
     component : TeamsComponent
+  },
+  {
+    path : 'team/:id',
+    component : CoursesComponent
   }
 ];
 
