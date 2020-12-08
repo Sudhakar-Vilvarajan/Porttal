@@ -1,0 +1,86 @@
+<div 
+class="modal fade" 
+[id]="'attendeeDetailsModal'+courseID"
+tabindex="-1" role="dialog"
+data-backdrop="static" 
+data-keyboard="false"
+aria-labelledby="attendeeDetailsModalLabel" 
+aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="attendeeDetailsModalLabel">
+                    Attendee Details
+                    <div><small>Please fill your deatil here.</small></div>
+                </h5>
+                <button type="button" class="close" 
+                data-dismiss="modal" aria-label="Close"
+                (click)="userDetails.reset()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+            <div class="modal-body">
+                <form #userDetails="ngForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                        ngModel
+                        name="name"
+                        #name="ngModel"
+                        type="text" 
+                        class="form-control" 
+                        id="name" 
+                        required>
+                        <div 
+                        class="alert alert-danger mt-1"
+                        *ngIf="name.touched && name.invalid">
+                            Full Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ctsID">Cognizant ID</label>
+                        <input 
+                        ngModel
+                        name="ctsID"
+                        #ctsID="ngModel"
+                        type="number" 
+                        class="form-control" 
+                        id="ctsID" 
+                        required
+                        pattern="[0-9]{6}">
+                        <div 
+                        class="alert alert-danger mt-1"
+                        *ngIf="ctsID.touched && ctsID.invalid">
+                            <span *ngIf="ctsID.errors.required">
+                                Cognizant ID is required
+                            </span>
+                            <span *ngIf="ctsID.errors.pattern">
+                                Cognizant ID should have 6 digits
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" 
+                data-dismiss="modal" (click)="userDetails.reset()">
+                    <i class="fas fa-times"></i> Close
+                </button>
+                <button type="button" class="btn btn-info" 
+                (click)="userDetails.reset()">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+                <button 
+                type="button" 
+                class="btn btn-primary"
+                data-toggle="modal"
+                [attr.data-target]="'#questionModal'+courseID"
+                data-dismiss="modal"
+                [disabled]="!userDetails.valid"
+                (click)="onAttendeeDetailsSubmit(userDetails);">
+                    <i class="fas fa-play"></i> Start
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

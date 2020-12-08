@@ -1,0 +1,39 @@
+.myjumbo{
+    position: relative;
+    background-size: cover;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.myjumbo:hover{
+    box-shadow: 5px 5px 15px rgb(106, 158, 236);
+    cursor: pointer;
+}
+
+.mytext{
+    font-weight: bolder;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+    color: white;
+    
+}
+
+.action{
+    color: white;
+}
+
+
+.action:hover{
+    color: white;
+    cursor: pointer;
+}
+
+
+.actionbar{
+    position: relative;
+    top: -3.2rem;
+    background: rgba(0,0,0,0.7);
+    padding: .3rem 1rem;
+    line-height: 2rem;
+    border-radius: 0 0 .3rem .3rem;
+    color: white;
+}

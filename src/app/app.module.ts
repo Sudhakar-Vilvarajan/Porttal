@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { CciComponent } from './applications/appknowledge/orderapp/cci/cci.component';
 import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { QuizModule } from './layouts/quiz/quiz.module'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
+    QuizModule
   ],
   providers: [],
   bootstrap: [AppComponent]
