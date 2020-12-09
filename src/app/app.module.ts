@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { CciComponent } from './applications/appknowledge/orderapp/cci/cci.component';
 import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+<<<<<<< HEAD
 import { CenterscreenComponent } from './applications/appknowledge/orderapp/centerscreen/centerscreen.component';
 import { SpotpriceComponent } from './applications/appknowledge/orderapp/spotprice/spotprice.component';
 import { FreightmanagerComponent } from './applications/appknowledge/operationsapp/freightmanager/freightmanager.component';
@@ -22,6 +23,9 @@ import { SafetycveComponent } from './applications/appknowledge/Vehicleapp/safet
 import { AwardComponent } from './applications/appknowledge/Vehicleapp/award/award.component';
 import { SafettrainingComponent } from './applications/safettraining/safettraining.component';
 import { SafetytrainingComponent } from './applications/safetytraining/safetytraining.component';
+=======
+import { QuizModule } from './layouts/quiz/quiz.module'
+>>>>>>> 18db4c001db9edbf7723249729afd17ebc7441e3
 
 @NgModule({
   declarations: [
@@ -45,6 +49,7 @@ import { SafetytrainingComponent } from './applications/safetytraining/safetytra
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
+    QuizModule
   ],
   providers: [],
   bootstrap: [AppComponent]

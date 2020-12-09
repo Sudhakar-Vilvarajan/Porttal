@@ -1,0 +1,47 @@
+<!-- Modal -->
+<div class="modal fade" 
+[id]="'resultModal'+course.id"
+tabindex="-1" 
+role="dialog" 
+aria-labelledby="resultModalLabel" 
+aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultModalLabel" *ngIf="attendee && course">
+                    Result for {{attendee.name}}
+                    <div><small>Course : {{course.name}} ({{course.id}})</small> </div>
+                    <div><small>Date : {{today|date}}</small></div>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="obtainPercent>-1 then result else hold"></div>
+
+                <ng-template #result class="">
+                    <div class="display-1 text-center">
+                        <div class="text-success" *ngIf="pass">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="text-danger" *ngIf="!pass">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="display-4 text-center">
+                        Your Score: {{obtainPercent|number}}%
+                    </div>
+                </ng-template>
+                <ng-template #hold>
+                    <div class="display-4 text-center">
+                        Hold tide.. Your answer is being evalutated...
+                    </div>
+                </ng-template>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

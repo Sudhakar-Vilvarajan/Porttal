@@ -1,0 +1,28 @@
+.myjumbo{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.mytext{
+    font-weight: bolder;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+    color: white;
+}
+
+
+.myjumbo .lead{
+    font-weight: bolder;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+    color: white
+}
+
+.accordion{
+    width: 100%;
+}
+
+
+.btn:focus{
+    box-shadow: none;
+    outline: none;
+}

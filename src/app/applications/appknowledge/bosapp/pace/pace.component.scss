@@ -1,35 +1,43 @@
-.bg{
-    background-color:white;
-    height: auto;
-}
-.cci
-{
-    margin-left: 100px;
-    margin-right: 100px; 
-    height: 200%; 
-}
-.p{
-    font-size: 20px;
-    line-height: 1.6;
-   
-}
-.header{
-    text-align: center;
-    font-size: 3em;
-}
 .video{
     padding: 25px;
     width: 70%;
     margin-left: 250px;
     margin-right: 250px;
 }
+.header{
+    text-align: center;
+    font-size: 3em;
+    
+}
+
 .body{
     font-size: 1.3em;
     margin-left: 50px;
     margin-right: 50px;
     font-weight: bold;
 }
-.style{
-    background-color: green;
-    max-width:90%;
+.pace{
+    margin-left: 100px;
+    margin-right: 100px; 
+    height: 100%; 
 }
+
+.bg{
+    background-color:grey;
+    height: auto
+}
+.flowchart
+{
+    text-align:center;
+}
+.style{
+    background-color: indianred;
+    text-decoration-color: indianred;
+    width: 100%;
+    
+}
+.title {
+    border-radius: 5px 5px 0px 0px;
+      border: 3px solid #6b8e23;; 
+      background-color: navajowhite;
+   }

@@ -1,8 +1,9 @@
 <div class="bg">
-    <br><br>
-    <div class="header">SPOT PRICE</div>
+    <div class="spotprice">
+    <p-card class="profile-card" styleClass="ui-card-shadow">
+        <div class="style"><h3 class="header">SPOT PRICE</h3></div>
     <div class="body">
-        <div class="p">
+        
             <p>Rate Search Logic:
                 The beginning of the call starts within the PriceParameters.java in app_eom. It does a security check to
                 get the eCommerce flag if it exists, then passes the details on to lib_spotprice via the getOffers
@@ -16,8 +17,8 @@
                 Published rates. We have to call with each day, equipment type, division and mode. ICS rates require a
                 special accessorial placeholder for equipment type. These calls are threaded out, and made
                 asynchronously.
-            </p>
-            <p> If the rate is below the soft-floor value, then Pricing Manager approval will be required (This requires
+            </p><br>
+            <p>If the rate is below the soft-floor value, then Pricing Manager approval will be required (This requires
                 SPTPRICE4). If the rate is below a hard-floor value, then it cannot be sent for approval. Only a Pricing
                 Manager can create a Spotprice below a hard floor. Once an offer is created, it has until 23:59 on the
                 following day to be approved before it expires. All approvals must be done within this time limit for
@@ -27,19 +28,21 @@
                 BPM process will check for PM approval, and escalate to a more broad group of PMs/Pricing Directors by
                 checking whether the Offer has been approved about every 15 minutes. Upon approval, an email is sent to
                 the user who created the Offer so that they can send to the customer for their approval, or simply tie
-                the Spotprice to an order.
-                The Get Approval button will send an email to the address entered on the offer. Said email will contain
+                the Spotprice to an order.</p><br>
+               <p> The Get Approval button will send an email to the address entered on the offer. Said email will contain
                 a link to app_Spotviewer that will generate a Spotprice offer form that external users can eSign with a
                 agree to terms check box, name field, and approve button. Once that document is signed, it updates the
                 Offer to a Spotprice and emails the offer creator, and signer with the Spotprice number. Spotprice
                 creation queries are in lib_BPMSpotprice
             </p>
+            <br><br>
             <b> Application URL :</b> <a href="http://eom.jbhunt.com/eom/Pages/pricePage.face"> SPOT PRICE</a>
             <br>
-            <b>  Other Links :</b>
+            <b>  Other Links :</b></div>
             <div class="video">
                 <mat-video src="./assets/videos/1280.mp4"></mat-video>
-            </div>
+            
         </div>
+    </p-card>
     </div>
 </div>
