@@ -10,7 +10,6 @@ import { ShiftplanComponent } from './applications/shiftplan/shiftplan.component
 import { OnboardingprocessComponent } from './applications/onboardingprocess/onboardingprocess.component';
 import { EomComponent } from './applications/appknowledge/orderapp/eom/eom.component';
 import { CciComponent } from './applications/appknowledge/orderapp/cci/cci.component';
-<<<<<<< HEAD
 import { CenterscreenComponent } from './applications/appknowledge/orderapp/centerscreen/centerscreen.component';
 import { SpotpriceComponent } from './applications/appknowledge/orderapp/spotprice/spotprice.component';
 import { PaceComponent } from './applications/appknowledge/bosapp/pace/pace.component';
@@ -26,9 +25,7 @@ import { AwardComponent } from './applications/appknowledge/Vehicleapp/award/awa
 import { componentFactoryName } from '@angular/compiler';
 import { SafettrainingComponent } from './applications/safettraining/safettraining.component';
 import { SafetytrainingComponent } from './applications/safetytraining/safetytraining.component';
-=======
 import { TeamsComponent } from './layouts/quiz/components/teams/teams.component';
->>>>>>> 18db4c001db9edbf7723249729afd17ebc7441e3
 
 
 const routes: Routes = [
@@ -75,7 +72,10 @@ const routes: Routes = [
     component : TeamsComponent
   },
   {
-<<<<<<< HEAD
+    path : 'team/:id',
+    component : CoursesComponent
+  },
+  {
     path: 'cci',
     component: CciComponent
   },
@@ -138,13 +138,6 @@ const routes: Routes = [
   
  
 ]
-}];
-=======
-    path : 'team/:id',
-    component : CoursesComponent
-  }
-];
->>>>>>> 18db4c001db9edbf7723249729afd17ebc7441e3
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
