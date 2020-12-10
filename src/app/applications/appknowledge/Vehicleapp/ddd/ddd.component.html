@@ -1,7 +1,11 @@
 <div class="bg">
-    <div class="header">Driver Document Database (DDD)</div>
+    
+    <div class="ddd">
+        <p-card class="profile-card" styleClass="ui-card-shadow">
+
+            <div class="style"><h3 class="header">Driver Document Database (DDD)</h3></div>
     <div class="body">
-        <div class="p">
+       
             <p>When our CVE system receives a CVE from the OBC system, we go to make a new CVE Step Review. It gets
                 passed along
                 from the CVE to the DDD in order to do this. Once it’s at the DDD we look to see if the driver has an
@@ -16,7 +20,7 @@
                 After 15 days, even if the old reviews are open, then they
                 aren't going to be used to calculate new events.</p>
 
-
+<br>
 
             <p>When you Force Close a CVE Step Review, it will "rollback" all reviews that are further along in the set.
                 Example:
@@ -36,7 +40,7 @@
                 valid except
                 the type "other".</p>
 
-
+<br>
 
             <p>Headway events:
 
@@ -58,7 +62,7 @@
                 Example: Even if a driver has 20 headways, they'll just get 1 review on Monday and it'll have all 20
                 events attached
                 to it.</p>
-
+<br>
 
 
             <p>Collision mitigation events:
@@ -80,7 +84,7 @@
                 reviews but if they were on the same day then he will get only 1 step review.</p>
 
 
-
+<br>
 
 
             <p>Additional info on Peoplenet vs Safety direct events:
@@ -125,14 +129,17 @@
                 classification of
                 the event is “CVE Opportunity” in the event message body. There are no database or configuration
                 parameters for it.
-            </p>
+            </p><br><br>
             <b> Application URL :</b> <a
                 href="https://safetydriverreview.jbhunt.com/safetydriverreview/index.html">
-                DDD</a>
+               DDD</a>
+               
+<br>
+<b>  Other Links :</b></div>
             <div class="video">
                 <mat-video src="./assets/videos/1280.mp4"></mat-video>
 
-            </div>
-        </div>
+           
+        </div></p-card>
     </div>
 </div>
