@@ -64,7 +64,64 @@ const routes: Routes = [
       {
         path: 'cci',
         component: CciComponent
+      },
+      { 
+        path: 'centerscreen',
+        component: CenterscreenComponent
+      },
+      {
+        path:'spotprice',
+        component:SpotpriceComponent
+      },
+      {
+        path:'pace',
+        component:PaceComponent
+      },
+      {
+        path:'ddd',
+        component:DddComponent
+      },
+      {
+        path:'simonnow',
+        component:SimonnowComponent
+      },
+      {
+        path:'pace',
+        component:PaceComponent
+      },
+      {
+        path:'hawk',
+        component:HawkComponent
+      },
+      {
+        path:'workday',
+        component:WorkdayComponent
+      },
+      {
+        path:'freightmanager',
+        component:FreightmanagerComponent
+      },
+      {
+        path:'axb',
+        component:AxbComponent
+      },
+      {
+        path:'railmanager',
+        component:RailmanagerComponent
+      },
+      {
+        path:'safetycve',
+        component:SafetycveComponent
+      },
+      {
+        path:'award',
+        component:AwardComponent
+      },
+      {
+        path:'safetytraining',
+        component:SafetytrainingComponent
       }
+      
     ]
   },
   {
@@ -75,68 +132,8 @@ const routes: Routes = [
     path : 'team/:id',
     component : CoursesComponent
   },
-  {
-    path: 'cci',
-    component: CciComponent
-  },
-  { 
-    path: 'centerscreen',
-    component: CenterscreenComponent
-  },
-  {
-    path:'spotprice',
-    component:SpotpriceComponent
-  },
-  {
-    path:'pace',
-    component:PaceComponent
-  },
-  {
-    path:'ddd',
-    component:DddComponent
-  },
-  {
-    path:'simonnow',
-    component:SimonnowComponent
-  },
-  {
-    path:'pace',
-    component:PaceComponent
-  },
-  {
-    path:'hawk',
-    component:HawkComponent
-  },
-  {
-    path:'workday',
-    component:WorkdayComponent
-  },
-  {
-    path:'freightmanager',
-    component:FreightmanagerComponent
-  },
-  {
-    path:'axb',
-    component:AxbComponent
-  },
-  {
-    path:'railmanager',
-    component:RailmanagerComponent
-  },
-  {
-    path:'safetycve',
-    component:SafetycveComponent
-  },
-  {
-    path:'award',
-    component:AwardComponent
-  },
-  {
-    path:'safetytraining',
-    component:SafetytrainingComponent
-  }
   
- 
+  
 ]
 
 @NgModule({
