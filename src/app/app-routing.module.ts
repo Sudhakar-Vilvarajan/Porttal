@@ -22,10 +22,9 @@ import { AxbComponent } from './applications/appknowledge/bosapp/axb/axb.compone
 import { RailmanagerComponent } from './applications/appknowledge/operationsapp/railmanager/railmanager.component';
 import { SafetycveComponent } from './applications/appknowledge/Vehicleapp/safetycve/safetycve.component';
 import { AwardComponent } from './applications/appknowledge/Vehicleapp/award/award.component';
-import { componentFactoryName } from '@angular/compiler';
-import { SafettrainingComponent } from './applications/safettraining/safettraining.component';
 import { SafetytrainingComponent } from './applications/safetytraining/safetytraining.component';
 import { TeamsComponent } from './layouts/quiz/components/teams/teams.component';
+import { RbiComponent } from './applications/appknowledge/bosapp/rbi/rbi.component';
 
 
 const routes: Routes = [
@@ -76,6 +75,10 @@ const routes: Routes = [
       {
         path:'pace',
         component:PaceComponent
+      },
+      {
+        path:'rbi',
+        component:RbiComponent
       },
       {
         path:'ddd',
