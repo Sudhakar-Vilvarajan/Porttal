@@ -1,0 +1,147 @@
+<div class="bg">
+    <div class="button">
+        <button mdbBtn type="button" color="deep-purple" mdbWavesEffect><a routerLink="/team">BACK</a></button>
+    </div>
+    <div class="ddd">
+        <p-card class="profile-card" styleClass="ui-card-shadow">
+
+            <div class="style"><h3 class="header">Driver Document Database (DDD)</h3></div>
+    <div class="body">
+       
+            <p>When our CVE system receives a CVE from the OBC system, we go to make a new CVE Step Review. It gets
+                passed along
+                from the CVE to the DDD in order to do this. Once it’s at the DDD we look to see if the driver has an
+                open CVE Step
+                review that is less than 15 days old.If it’s more than 15 days old we start over at step 1, if it’s less
+                than 15 days old we create the next step in the
+                process.Example- if we have a CVE Step 1 for a driver that is less than 15 days old, we would create a
+                CVE Step 2 when we
+                get our next CVE from OBC. If it’s more than 15 days old, we start over and make a new Step 1. Thus, a
+                driver can
+                have any number of CVE step1 or step 2 reviews.But he can only have one "active CVE Step Review Set".
+                After 15 days, even if the old reviews are open, then they
+                aren't going to be used to calculate new events.</p>
+
+<br>
+
+            <p>When you Force Close a CVE Step Review, it will "rollback" all reviews that are further along in the set.
+                Example:
+                You have steps 1, 2, 3, 4 and you want to close step 2. It will force close 2, and then "rollback" step
+                3 to 2, and
+                step 4 to 3.ssIt does this by force closing a review, then remaking it with the same data. So, in the
+                above example, after step 2
+                is closed, step 3 will be closed and the DDD will remake a review with the same data, so a new step 2 is
+                created.
+                And the same thing happens with the step 4.We need to look at the collision mitigation and headways for
+                a truck, but only if it is for peoplenet. Trucks that
+                are SafetyDirect actually sends both peoplenet and safety direct events and all of the peoplenet events
+                are
+                duplicates (in this case), so we through them out.So, when looking at events for a driver, you have to
+                see if there are only peoplenet events, or both peoplenet and
+                safety direct. If there are both types, then it’s a safety direct truck which means all event types are
+                valid except
+                the type "other".</p>
+
+<br>
+
+            <p>Headway events:
+
+                Any time we get a headway event instead of creating a review, we store it on a table called
+                "EventTypePendingReviewWork" table. We have a batch job- DS_SFTDDDEVENTS_REVIEW that runs every Monday
+                at 12:00AM
+                midnight that reads all the rows off of the table.
+
+
+
+                If it finds a driver has 3 or more headways, then it creates 1 review and attaches ALL the headways to
+                that review.
+                If they don't have 3 or more headways, then the events are just tossed out and nothing happens.
+
+                After the batch is done, it then deletes all rows from the table.
+
+
+
+                Example: Even if a driver has 20 headways, they'll just get 1 review on Monday and it'll have all 20
+                events attached
+                to it.</p>
+<br>
+
+
+            <p>Collision mitigation events:
+
+                The batch job only applies to headways and Collison mitigation events are triggered to create step
+                review then and
+                there.
+
+
+
+                We have a special rule in the DDD that if the events are of the same type on the same day, they will
+                create only one
+                review. Headway events don't count in this because of their special process discussed above.
+
+
+
+                For example, if a driver makes 2 collision mitigation events on different days then it creates 2
+                different step
+                reviews but if they were on the same day then he will get only 1 step review.</p>
+
+
+<br>
+
+
+            <p>Additional info on Peoplenet vs Safety direct events:
+
+
+
+                Peoplenet events: Based on the table-ReviewPreferenceEventTypeAssociation, enabled peoplenet events will
+                only auto
+                create review and email notification.
+
+
+
+                CollMit
+
+                Enabled
+
+                Headway
+
+                Enabled
+
+                RollStab
+
+                Disabled
+
+                Other
+
+                Disabled
+
+                ElecStab
+
+                Disabled
+
+                Hardbrak
+
+                Disabled
+
+
+
+
+
+                Safety direct events: DDD will only auto create a CVE Step review on a Safety Direct event if the
+                classification of
+                the event is “CVE Opportunity” in the event message body. There are no database or configuration
+                parameters for it.
+            </p><br><br>
+            <b> Application URL :</b> <a
+                href="https://safetydriverreview.jbhunt.com/safetydriverreview/index.html">
+               DDD</a>
+               
+<br>
+<b>  Other Links :</b></div>
+            <div class="video">
+                <mat-video src="./assets/videos/1280.mp4"></mat-video>
+
+           
+        </div></p-card>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="bg">
+    <div class="button">
+        <button mdbBtn type="button" color="deep-purple" mdbWavesEffect><a routerLink="/team">BACK</a></button>
+    </div>
+    <div class="spotprice">
+    <p-card class="profile-card" styleClass="ui-card-shadow">
+        <div class="style"><h3 class="header">SPOT PRICE</h3></div>
+    <div class="body">
+        
+            <p>Rate Search Logic:
+                The beginning of the call starts within the PriceParameters.java in app_eom. It does a security check to
+                get the eCommerce flag if it exists, then passes the details on to lib_spotprice via the getOffers
+                method within the GetOffersFromJBHRates.java class. From getOffers, it then fetches location information
+                for the shipper/receiver in order to calculate distance. Once that is calculated, the details are then
+                passed into 2 separate paths.Suggested Rates from EAGLE and Published Rates from RTC043
+                Load details are passed to lib_jbhRates with the findAllAvailableRates method. In lib_jbhRates, we first
+                call Eagle in order to fetch the suggested rates (aka market rates in the 360 realm). Eagle gets their
+                accessorial from RTC043, and builds the rates to return to lib_jbhRates.
+                With each one of the suggested rates returned, we prepare a call to RTC043 in order to check for
+                Published rates. We have to call with each day, equipment type, division and mode. ICS rates require a
+                special accessorial placeholder for equipment type. These calls are threaded out, and made
+                asynchronously.
+            </p><br>
+            <p>If the rate is below the soft-floor value, then Pricing Manager approval will be required (This requires
+                SPTPRICE4). If the rate is below a hard-floor value, then it cannot be sent for approval. Only a Pricing
+                Manager can create a Spotprice below a hard floor. Once an offer is created, it has until 23:59 on the
+                following day to be approved before it expires. All approvals must be done within this time limit for
+                the Offer to become a Spotprice.
+                If Pricing Manager approval is required, clicking the Bypass Customer Approval or Get Approval button
+                will generate a Business Process Management object on the ECM (Filenet) BPM process, offerApproval. This
+                BPM process will check for PM approval, and escalate to a more broad group of PMs/Pricing Directors by
+                checking whether the Offer has been approved about every 15 minutes. Upon approval, an email is sent to
+                the user who created the Offer so that they can send to the customer for their approval, or simply tie
+                the Spotprice to an order.</p><br>
+               <p> The Get Approval button will send an email to the address entered on the offer. Said email will contain
+                a link to app_Spotviewer that will generate a Spotprice offer form that external users can eSign with a
+                agree to terms check box, name field, and approve button. Once that document is signed, it updates the
+                Offer to a Spotprice and emails the offer creator, and signer with the Spotprice number. Spotprice
+                creation queries are in lib_BPMSpotprice
+            </p>
+            <br><br>
+            <b> Application URL :</b> <a href="http://eom.jbhunt.com/eom/Pages/pricePage.face"> SPOT PRICE</a>
+            <br>
+            <b>  Other Links :</b></div>
+            <div class="video">
+                <mat-video src="./assets/videos/1280.mp4"></mat-video>
+            
+        </div>
+    </p-card>
+    </div>
+</div>

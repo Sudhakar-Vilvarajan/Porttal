@@ -1,0 +1,56 @@
+<div class="bg">
+   <div class="button">
+      <button mdbBtn type="button" color="deep-purple" mdbWavesEffect><a routerLink="/team">BACK</a></button>
+  </div>
+   <div class="award">
+       <p-card class="profile-card" styleClass="ui-card-shadow">
+
+           <div class="style"><h3 class="header">
+           AWARD APPLICATION</h3>
+        </div>
+        <div class="body">
+
+<p>Jb Hunt provides a various award for the drivers to recognize their remarkable work professionalism and safe operations on the road. </p>
+   <p> Award application is used to approve / reject award status of a driver. We can able to create a new awards using this application.
+    The Awards system is used to nominate and award drivers for different types of achievements, including safe driving and million-mile awards.
+    They will have award rows in which they will be having award nominated, approved and processed date.
+    We also check on the driver miles history to check and verify the actual, award and penalty miles during the period.</p>
+   <br> <div class="flowchart">
+        <img src=".\assets\app_icon\Vehicle\award1.PNG">
+    </div> <br>  
+    <p>
+     PURPOSE:</p>
+<p>•	To view the approved awards</p>
+<p>•	From the approved awards listed in the AWARDS SUMMARY page, select a record to be viewed and click the expand icon on the left to view additional information.</p>
+
+   <p>Tables Involved:</p> 
+   <p>=>AWD. AwardNomination</p>
+   <p>=>AWD. AwardNominationWorkFlow</p>
+   <p>Source of Input:  </p>
+   <p>Approved awards will be retrieved from the table AWD. AwardNominationWorkFlow.</p>
+   <p> Meaning of certain column names for better understanding:</p><br>
+   <p>DriverJobGroupCode : This indicates what type of driver he is a local, regional or other driver.</p>
+   <p>•	Local driver will be indicated as LOC</p>
+   <p> •	Regional driver will be indicated as REG</p>
+    
+    <p> TotalActualMileageQuantity :</p>
+    <p>It indicates the total number of miles driven by the driver in a particular period. These miles will be converted into award or penalty based on his preventable. </p>
+    <br><p>TotalPenaltyMileageQuantity :</p>
+    <p> When the driver commits an accident, it has been classified into two types as follows</p>
+    <p>•	Preventable incident (Accident which can be obviously prevented by a driver where he could have done something to avoid it)</p>
+<p>•	Non preventable incident (Accident which cannot be prevented at any point)</p>
+        <p> So, when a driver commits a preventable incident then his total miles will be converted into penalty miles for certain period based on the safety award rules.</p>
+        <p>We can check the penalty Period for driver in PreventableAccidentPenaltyPeriod table. If he commits a preventable incident, the driver will be in penalty period for one year and all his total miles will be converted into penalty miles. You can check on the rules with user in case of any clarifications needed.</p>
+
+<br><br>
+<b> Application URL :</b> <a
+            href="http://safetyawards.jbhunt.com/safetyawards/"> AWARD APPLICATION </a>
+            <br>
+                                      <b>  Other Links :</b></div>
+         <div class="video">
+            <mat-video src="./assets/videos/1280.mp4"></mat-video>
+         </div>
+    </p-card>
+    </div>
+    </div>
+    
