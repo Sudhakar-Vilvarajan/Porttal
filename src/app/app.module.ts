@@ -20,7 +20,6 @@ import { AxbComponent } from './applications/appknowledge/bosapp/axb/axb.compone
 import { RailmanagerComponent } from './applications/appknowledge/operationsapp/railmanager/railmanager.component';
 import { SafetycveComponent } from './applications/appknowledge/Vehicleapp/safetycve/safetycve.component';
 import { AwardComponent } from './applications/appknowledge/Vehicleapp/award/award.component';
-import { SafettrainingComponent } from './applications/safettraining/safettraining.component';
 import { SafetytrainingComponent } from './applications/safetytraining/safetytraining.component';
 import { QuizModule } from './layouts/quiz/quiz.module'
 
