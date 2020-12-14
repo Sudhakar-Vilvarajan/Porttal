@@ -21,7 +21,7 @@ import { AxbComponent } from '../bosapp/axb/axb.component';
 import { RailmanagerComponent } from '../operationsapp/railmanager/railmanager.component';
 import { SafetycveComponent } from '../Vehicleapp/safetycve/safetycve.component';
 import { AwardComponent } from '../Vehicleapp/award/award.component';
-import { SafetytrainingComponent } from '../../safetytraining/safetytraining.component';
+import { SafetytrainingComponent } from '../Vehicleapp/safetytraining/safetytraining.component';
 
 @NgModule({
   declarations: [
