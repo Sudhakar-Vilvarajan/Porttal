@@ -22,7 +22,7 @@ import { AxbComponent } from './applications/appknowledge/bosapp/axb/axb.compone
 import { RailmanagerComponent } from './applications/appknowledge/operationsapp/railmanager/railmanager.component';
 import { SafetycveComponent } from './applications/appknowledge/Vehicleapp/safetycve/safetycve.component';
 import { AwardComponent } from './applications/appknowledge/Vehicleapp/award/award.component';
-import { SafetytrainingComponent } from './applications/safetytraining/safetytraining.component';
+import { SafetytrainingComponent } from './applications/appknowledge/Vehicleapp/safetytraining/safetytraining.component';
 import { TeamsComponent } from './layouts/quiz/components/teams/teams.component';
 import { RbiComponent } from './applications/appknowledge/bosapp/rbi/rbi.component';
 

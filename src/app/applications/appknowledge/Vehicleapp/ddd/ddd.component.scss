@@ -1,8 +1,6 @@
 .video{
-    padding: 25px;
-    width: 70%;
-    margin-left: 250px;
-    margin-right: 250px;
+    padding: 5em;
+    text-align: center;
 }
 .header{
     text-align: center;
@@ -26,9 +24,11 @@
     background-color:grey;
     height: auto
 }
-.flowchart
+.flowchart>img
 {
     text-align:center;
+    width : 100%;
+    height: auto;
 }
 .style{
     background-color: indianred;
