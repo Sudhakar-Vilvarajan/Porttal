@@ -23,7 +23,9 @@ export class ChatDialogComponent implements OnInit {
       )
   }
   sendMessage() {
-    this.chat.converse(this.formValue);
-    this.formValue = '';
+    if(this.formValue.trim().length>0){
+      this.chat.converse(this.formValue);
+      this.formValue = '';
+    }
   }
 }
