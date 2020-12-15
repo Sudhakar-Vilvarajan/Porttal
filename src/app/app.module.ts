@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { QuizModule } from './layouts/quiz/quiz.module'
+import { ChatbotModule } from './layouts/chatbot/chatbot.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { QuizModule } from './layouts/quiz/quiz.module'
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    QuizModule
+    QuizModule,
+    ChatbotModule
   ],
   providers: [],
   bootstrap: [AppComponent]

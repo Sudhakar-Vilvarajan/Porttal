@@ -1,0 +1,45 @@
+.message {
+    border-radius: 50px;
+    margin: 0 15px 10px;
+    padding: 15px 20px;
+    position: relative;
+    font-weight: bold;
+}
+.message.to {
+    background-color: #E5E4E9;
+    color: #363636;
+    margin-left: 100px;
+    text-align: right;
+}
+.message.from {
+    background-color: #2095FE;
+    color: #fff;
+    margin-right: 100px;
+}
+.message.to + .message.to,
+.message.from + .message.from {
+margin-top: -10px;
+}
+
+.chatBotBody{
+    background-image: url('./../../../../assets/backgroundtruck.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+
+.inputBox{
+    border: 1px solid red;
+}
+
+.sendBtn{
+    border: 1px solid green;
+}
+
+
+.backBtn{
+    border: 1px solid blue;
+}

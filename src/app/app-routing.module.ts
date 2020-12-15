@@ -1,3 +1,4 @@
+import { ChatDialogComponent } from './layouts/chatbot/chat-dialog/chat-dialog.component';
 import { CoursesComponent } from './layouts/quiz/components/courses/courses.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -134,6 +135,10 @@ const routes: Routes = [
   {
     path : 'team/:id',
     component : CoursesComponent
+  },
+  {
+    path : 'chatbot',
+    component : ChatDialogComponent
   },
   
   
