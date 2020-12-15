@@ -1,31 +1,31 @@
-
-
-
-  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-  <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 <div class="chatBotBody">
-  <h1 class="title">ChatBOT</h1>
-<ng-container *ngFor="let message of messages | async">
-  <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
-                                    'to':   message.sentBy === 'user' }">
-{{ message.content }}
-
-  
-
-
-  </div>
-</ng-container>
-<!-- <label for="nameField">You.....</label> -->
-
-<div style="display: flex">
-  <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" style="border-radius: .4rem 0 0 .4rem " class="inputBox">
-  <button (click)="sendMessage()" style="border-radius: 0 .4rem .4rem 0" class="sendBtn">Send</button>
-</div>
-
-<div>
- 
-   <a href="http://localhost:4200/home" class="backBtn">Back</a>
-
-</div>
-
+    <div class="chat">
+        <h1 class="title">ChatBOT</h1>
+        <ng-container *ngFor="let message of messages | async">
+            <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                        'to':   message.sentBy === 'user' }">
+                {{ message.content }}
+            </div>
+        </ng-container>
+        <div style="display: flex">
+            <div class="input-group mb-3">
+                <input
+                    [(ngModel)]="formValue" 
+                    (keyup.enter)="sendMessage()" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="type here...">
+                <button 
+                    (click)="sendMessage()" 
+                    class="btn btn-success" 
+                    type="button" 
+                    id="button-addon2">
+                        Send
+                </button>
+            </div>
+        </div>
+        <div>
+            <a href="http://localhost:4200/home" class="btn btn-primary">Back</a>
+        </div>
+    </div>
 </div>
