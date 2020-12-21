@@ -1,5 +1,5 @@
 import { ChatService, Message } from './../chat.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { scan } from 'rxjs/operators';
 
@@ -9,8 +9,10 @@ import { scan } from 'rxjs/operators';
   styleUrls: ['./chat-dialog.component.scss']
 })
 export class ChatDialogComponent implements OnInit {
+  @ViewChild('chatArea',{static : false}) chatArea : ElementRef
   messages: Observable<Message[]>;
   formValue: string;
+  timer: any;
   constructor(public chat: ChatService) { }
   ngOnInit() {
     // appends to array after each new message is added to feedSource
@@ -27,5 +29,13 @@ export class ChatDialogComponent implements OnInit {
       this.chat.converse(this.formValue);
       this.formValue = '';
     }
+    this.startTimer();
   }
+
+  startTimer() {
+    this.timer=setInterval(() => {
+      this.chatArea.nativeElement.scrollTop = this.chatArea.nativeElement.scrollHeight;
+    },2000);
+  }
+
 }

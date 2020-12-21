@@ -1,31 +1,31 @@
 <div class="chatBotBody">
-    <div class="chat">
-        <h1 class="title">ChatBOT</h1>
+    <h1 class="title d-inline">
+        ChatBOT
+        <a href="http://localhost:4200/home" class="btn btn-primary">Back</a>
+    </h1>
+    <div class="chat" #chatArea>
         <ng-container *ngFor="let message of messages | async">
             <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
                                         'to':   message.sentBy === 'user' }">
                 {{ message.content }}
             </div>
         </ng-container>
-        <div style="display: flex">
-            <div class="input-group mb-3">
-                <input
-                    [(ngModel)]="formValue" 
-                    (keyup.enter)="sendMessage()" 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="type here...">
-                <button 
-                    (click)="sendMessage()" 
-                    class="btn btn-success" 
-                    type="button" 
-                    id="button-addon2">
-                        Send
-                </button>
-            </div>
-        </div>
-        <div>
-            <a href="http://localhost:4200/home" class="btn btn-primary">Back</a>
+    </div>
+    <div class="inputArea" style="display: flex" >
+        <div class="input-group mb-3 mr-3">
+            <input
+                [(ngModel)]="formValue" 
+                (keyup.enter)="sendMessage()" 
+                type="text" 
+                class="form-control" 
+                placeholder="type here...">
+            <button 
+                (click)="sendMessage()" 
+                class="btn btn-success" 
+                type="button" 
+                id="button-addon2">
+                    Send
+            </button>
         </div>
     </div>
 </div>
