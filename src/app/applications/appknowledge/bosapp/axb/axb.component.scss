@@ -5,7 +5,7 @@
 .header{
     text-align: center;
     font-size: 3em;
-    
+    font-weight: bold;
 }
 
 .body{
@@ -31,8 +31,6 @@
     height: auto;
 }
 .style{
-    background-color: indianred;
-    text-decoration-color: indianred;
     width: 100%;
     
 }
@@ -43,7 +41,7 @@
    }
 
    .button {
-    background-color: yellowgreen; /* Green */
+    //background-color: yellowgreen; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
