@@ -6,15 +6,19 @@
     font-weight: bold;
 }
 .message.to {
-    background-color: #E5E4E9;
-    color: #363636;
-    margin-left: 100px;
+    background-color: #a7e9b2;
+    color: #000000;
+    margin-left: 500px;
+    margin-right:200px;
     text-align: right;
+    width:60%
 }
 .message.from {
-    background-color: #2095FE;
-    color: #fff;
-    margin-right: 100px;
+    background-color: #77b7f1;
+    color: #000000;
+    margin-right: 500px;
+    margin-left: 200px;
+    width:60%
 }
 .message.to + .message.to,
 .message.from + .message.from {
@@ -22,7 +26,7 @@ margin-top: -10px;
 }
 
 .chatBotBody{
-    background-image: url('./../../../../assets/backgroundtruck.jpg');
+    background-image: url("/assets/backgroundtruck.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -42,6 +46,8 @@ margin-top: -10px;
 
 .inputArea{
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    bottom: 20px;
+    width: 80%;
+    margin-left:10% ;
 }
+
