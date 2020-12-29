@@ -35,7 +35,12 @@ export class ChatDialogComponent implements OnInit {
   startTimer() {
     this.timer=setInterval(() => {
       this.chatArea.nativeElement.scrollTop = this.chatArea.nativeElement.scrollHeight;
+      this.stopTimer();
     },2000);
+  }
+
+  stopTimer(){
+    clearInterval(this.timer);
   }
 
 }
